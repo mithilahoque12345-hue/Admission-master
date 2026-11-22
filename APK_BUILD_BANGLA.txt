@@ -1,0 +1,17 @@
+Admission Master APK বানানোর সহজ উপায়
+
+এই ZIP-টি APK নয়; এটি APK build করার project।
+
+কম্পিউটার থাকলে:
+1. Android Studio ইনস্টল করে এই project folder ওপেন করো।
+2. Gradle sync শেষ হলে Build > Build Bundle(s) / APK(s) > Build APK(s) চাপো।
+3. app/build/outputs/apk/debug/app-debug.apk ফাইলটি ফোনে পাঠিয়ে ইনস্টল করো।
+
+GitHub দিয়ে build:
+1. GitHub-এ নতুন repository বানাও।
+2. ZIP extract করে ভেতরের সব ফাইল repository-তে upload করো (root-এ app, build.gradle, settings.gradle ও .github থাকবে)।
+3. Actions tab-এ গিয়ে “Build Admission Master APK” workflow চালাও; push করলেও auto build হবে।
+4. Workflow সফল হলে run খুলে Artifacts থেকে AdmissionMaster-debug-apk ডাউনলোড করো।
+5. ZIP artifact extract করে app-debug.apk ফোনে ইনস্টল করো।
+
+Android APK-টি unsigned debug build হবে, নিজের ফোনে ইনস্টল/পরীক্ষার জন্য। Play Store release-এর জন্য আলাদা signing দরকার।
